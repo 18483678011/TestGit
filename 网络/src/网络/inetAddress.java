@@ -7,7 +7,6 @@ import java.awt.HeadlessException;
 import java.awt.ScrollPane;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.nio.channels.NonWritableChannelException;
 
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
@@ -36,12 +35,12 @@ public class inetAddress  {
 		} // 获取IP数组
 
 		bbb .getbbb("本机IP1");
-		bbb .getbbb("本机IP");
-	
 		
 	}
 }
 class  bbb extends JFrame{
+
+	private static final long serialVersionUID = 1L;
 	private JTextArea jt;
 	private static bbb setBbb=null;
 	Container con;

@@ -4,7 +4,9 @@ public class hall {
 	public static void main(String[] args) {
 
 		// TODO 自动生成的方法存根
-
+String string=new String("66");
+Integer integer=Integer.parseInt(string);
+System.out.println(6+integer);
 		getday ds = new getday();
 		ds.mat("jinajia");
 		int arr[][] = new int[3][3]; // 确定数字“1”的位置

@@ -29,7 +29,7 @@ public class MyTcp extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private boolean sss = true;
 	private JLabel sJLabel;
-	private BufferedReader reader;
+	private BufferedReader reader;// 缓冲字节流
 	private ServerSocket server;
 	private PrintWriter writer;
 	private JButton button;
@@ -59,7 +59,7 @@ public class MyTcp extends JFrame {
 		jField.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				writer.println(jField.getText());
+				writer.println(jField.getText());// 定义输出流位置
 				jt.append("我：" + jField.getText() + "\n");
 				jt.setSelectionEnd(jt.getText().length());
 				jField.setText("");
@@ -130,8 +130,8 @@ public class MyTcp extends JFrame {
 	private void getClientMessage() {
 		try {
 			while (true) {
-				writer = new PrintWriter(socket.getOutputStream(), true);
-				jt.append("客户机：" + reader.readLine() + "\n");
+				writer = new PrintWriter(socket.getOutputStream(), true);// 获取输出流
+				jt.append("客户机[" +socket.getInetAddress()+"]"+ reader.readLine() + "\n");
 			}
 		} catch (IOException e) {
 			e.printStackTrace();

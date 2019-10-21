@@ -13,7 +13,7 @@ public class 跳跳球 extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JLabel jL = new JLabel();
-	private static Thread t;
+	private static Thread t; 
 	private Container container = getContentPane();
 	static int a = 5, b = 7;// a是小球上下移动的速度,b是小球左右移动的速度
 	static int x = 0, y = 0;// 小球的初始坐标

@@ -12,7 +12,13 @@ public class SocketTest extends JFrame {
 	private boolean sss = true;
 	private JLabel sJLabel;
 	private JButton button;
-	private PrintWriter writer;
+	private PrintWriter writer;// 给人一种可以直接对文件进行操作的假象
+	/*
+	 * PrintWriter创建时如果有参数true时，会有行刷新。PrintWriter调用println()方法有行刷新。
+	 * 当创建PW时第一个参数为一个流时， 那么久可以再传入一个boolean值类型的参数， 若该值为true，那么当前PW久具有自动行刷新的功能，
+	 * 即：每当使用println方法写出一行字符串后就会自动调用flush 注：使用自动行刷新可以提高写出数据的即时性，
+	 * 但是由于会提高写出次数，必然会导致写效率降低。
+	 */
 	BufferedReader reader;
 	private static final long serialVersionUID = 1L;
 	private Socket socket;
@@ -114,7 +120,7 @@ public class SocketTest extends JFrame {
 				if (socket.isConnected()) {
 					writer = new PrintWriter(socket.getOutputStream(), true);
 					reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-					jt.append("服务器：" + reader.readLine() + "\n");
+					jt.append("服务器[" +socket.getInetAddress()+"]"+ reader.readLine() + "\n");
 				}
 			}
 		} catch (IOException e) {
